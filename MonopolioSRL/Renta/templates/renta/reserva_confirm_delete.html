@@ -1,0 +1,11 @@
+{% extends "base.html" %} {% block content %}
+
+
+
+<form method="POST">
+    {% csrf_token %}
+    <p>¿Desea eliminar la reserva de {{object}}?</p>
+    <button type="submit">Confirmar</button>
+    <a href="{% url 'listado_oficina' %} "><button type="button ">Cancelar</button></a>
+
+</form> {% endblock %}

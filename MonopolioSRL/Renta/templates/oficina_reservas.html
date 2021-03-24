@@ -1,0 +1,30 @@
+{% extends 'base.html' %}{% block content %}
+<table border="1">
+    <caption>Reservas</caption>
+    <tr>
+        <th>Nombre Reserva</th>
+        <th>Fecha Reserva</th>
+        <th>Fecha Inicio</th>
+        <th>Fecha de Fin</th>
+
+    </tr>
+
+    {% for reserva in obj %}
+    <tr>
+        <td>{{reserva.nombre_cliente}}</td>
+        <td>{{reserva.fecha_reserva}}</td>
+
+        <td>{{reserva.fecha_comienzo}}</td>
+        <td>{{reserva.fecha_fin}}</td>
+        <td>
+            <a href="{% url 'eliminar_reserva' reserva.id %}">
+                <button>Eliminar</button></a>
+        </td>
+        <td> <a href="{% url 'editar_reserva' reserva.id %}" class="btn btn-info">Editar</a> </td>
+
+
+
+
+
+
+    </tr> {% endfor %} {% endblock %}}

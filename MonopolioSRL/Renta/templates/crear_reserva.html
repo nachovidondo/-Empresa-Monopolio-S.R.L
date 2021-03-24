@@ -1,0 +1,14 @@
+{% extends 'base.html ' %}{% block content %}{% load crispy_forms_tags %}
+
+<div>
+
+    <h2>Creacion de Reserva </h2>
+    <form action method="post">
+        {% csrf_token %} {{form|crispy }}
+
+
+        <button type="submit">Crear Reserva </button>
+    </form>
+</div>
+
+{% endblock %}

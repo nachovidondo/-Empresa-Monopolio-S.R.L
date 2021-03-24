@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block content %}
+
+
+<table border="1">
+    <caption>Oficinas</caption>
+    <tr>
+        <th>Oficina</th>
+        <th>Cant. Personas</th>
+        <th>Telefono?</th>
+        <th>Wifi</th>
+        <th>Baño privado?</th>
+    </tr>
+    {% for oficina in oficinas %}
+    <tr>
+        <td>{{oficina.nombre}}</td>
+        <td>{{oficina.cantidad_personas}}</td>
+
+        <td>{{oficina.telefono}}</td>
+        <td>{{oficina.wifi}}</td>
+        <td>{{oficina.baño_privado}}</td>
+        <td>
+            <a href="{% url 'detalle_oficina' oficina.id %}" class="btn btn-info">Ver Detalle</a>
+        </td>
+
+
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

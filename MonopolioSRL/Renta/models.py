@@ -3,13 +3,16 @@ from django.db.models.deletion import CASCADE
 
 # Create your models here.
 class Oficina(models.Model):
+    telefono_choice = (('Si','Si'),('No','No'))
+    bañoprivado_choice=(('Si','Si'),('No','No'))
+    wifi_choice=(('Si','Si'),('No','No'))
     nombre = models.CharField(max_length=200)
     codigo_interno = models.CharField(max_length=100)
     persona_encargada = models.CharField(max_length=200)
     cantidad_personas = models.IntegerField()
-    telefono = models.BooleanField(default=True)
-    baño_privado = models.BooleanField(default=True)
-    wifi = models.BooleanField(default=True)
+    telefono = models.CharField(max_length =200,choices = telefono_choice,default="Si")
+    baño_privado = models.Chtelefono = models.CharField(max_length =200,choices = bañoprivado_choice,default ="Si")
+    wifi = models.Chtelefono = models.CharField(max_length =200,choices = wifi_choice,default = "Si")
     class Meta:
         verbose_name = "Oficina"
         
@@ -27,4 +30,4 @@ class Reserva(models.Model):
         verbose_name = "Reserva"
         
     def __str__(self):
-        self.nombre_reserva
+        return str(self.nombre_cliente)
